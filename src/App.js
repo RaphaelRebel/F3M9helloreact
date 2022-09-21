@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import Card from './Card';
+import "./App.css";
+import matchers from '@testing-library/jest-dom/matchers';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const App = () => {
+
+    const click = () => {
+        console.log('Ik ben geklikt');
+    }
+
+    const random = () => {
+        console.log( Math.random());
+    }
+
+    const sum = () => {
+        console.log( 2123123 * 12312);
+    } 
+    return(
+        <>
+       
+        <Card mouseclick={click} title="Eerste kaart" />
+        <Card mouseclick={random} text="Hallo ik ben een tekst" />
+        <Card mouseclick={sum} title="Derde kaart" text="Hallo ik ben een tekst"/>
+        </>
+    );
 }
+
 
 export default App;
